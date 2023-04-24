@@ -1,0 +1,293 @@
+<div class="row">
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="mt-4 pb-2 border-bottom-1">
+                    <h5 class="text-primary d-inline">Machine Status</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="form-control" name="status" multiple>
+                                <option value="Online" selected>Online</option>
+                                <option value="Offline" selected>Offline</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pb-2 border-bottom-1">
+                    <h5 class="text-primary d-inline">Stock Status</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="form-control" name="stock_status" multiple>
+                                <option value="3">Ok</option>
+                                <option value="1">Low</option>
+                                <option value="0">Empty</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pb-2 border-bottom-1">
+                    <h5 class="text-primary d-inline">Burn Status</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="form-control" name="burn_status" multiple>
+                                <option value="0">Idle</option>
+                                <option value="1">Burning</option>
+                                <option value="2">Error</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="mt-4 pb-2 border-bottom-1">
+                    <h5 class="text-primary d-inline">State</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="form-control" name="state" multiple>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pb-2 border-bottom-1">
+                    <h5 class="text-primary d-inline">City</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="form-control" name="city" multiple>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pb-2 border-bottom-1">
+                    <h5 class="text-primary d-inline">Zone</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="form-control" name="zone" multiple>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pb-2 border-bottom-1">
+                    <h5 class="text-primary d-inline">Cluster</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="form-control" name="cluster" multiple>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pb-2 border-bottom-1">
+                    <h5 class="text-primary d-inline">Ward</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="form-control" name="ward" multiple>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="stat-widget-one stat-widget-top card-body">
+                        <div class="stat-icon d-inline-block">
+                            <i class="ti-panel text-primary border-primary"></i>
+                        </div>
+                        <div class="stat-content d-inline-block">
+                            <div class="stat-text">Machines Installed</div>
+                            <div class="stat-digit" id="txt-machines">...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="stat-widget-one stat-widget-top card-body">
+                        <div class="stat-icon d-inline-block">
+                            <i class="ti-power-off text-warning border-warning"></i>
+                        </div>
+                        <div class="stat-content d-inline-block">
+                            <div class="stat-text">Machines Running</div>
+                            <div class="stat-digit" id="txt-machines-on">...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="stat-widget-one stat-widget-top card-body">
+                        <div class="stat-icon d-inline-block">
+                            <i class="ti-money text-success border-success"></i>
+                        </div>
+                        <div class="stat-content d-inline-block">
+                            <div class="stat-text">Total Collection</div>
+                            <div class="stat-digit" id="txt-collection">...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="stat-widget-one stat-widget-top card-body">
+                        <div class="stat-icon d-inline-block">
+                            <i class="ti-package text-info border-info"></i>
+                        </div>
+                        <div class="stat-content d-inline-block">
+                            <div class="stat-text">Items Dispensed</div>
+                            <div class="stat-digit" id="txt-inventory">...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-bordered w-100" id="tblMachines">
+                            <thead>
+                                <tr>
+                                    <th>Sr. No.</th>
+                                    <th>Machine</th>
+                                    <th>Status</th>
+                                    <th>Stock Status</th>
+                                    <th>Burning Status</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{#contentFor "styles"}}
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.2/css/bootstrap-multiselect.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css" />
+<link href="/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.2/js/bootstrap-multiselect.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
+<script src="/assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/assets/vendor/moment/moment.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        if ($(body).width() >= 768)
+            $('#main-wrapper').addClass('menu-toggle')
+        $('select[multiple]').multiselect().change(function(){
+            window.srNo = 1; $('#tblMachines').DataTable().ajax.reload();
+        });
+        InitData();
+    });
+
+    const online = m => moment().diff(moment.utc((m.lastHeartbeatTime || m.lastOnTime).replace('Z', '')), 'minute') < 5;
+
+    function LoadData() {
+        window.srNo = 1;
+        $('#tblMachines').DataTable().destroy();
+        $('#tblMachines').find('tbody').empty();
+        $('#tblMachines').DataTable({
+            ajax: {
+                url: `${apiUrl}/machine/data`,
+                data: d =>{
+                    d['status'] = ($('[name="status"]').val() || []).join();
+                    d['burn_status'] = ($('[name="burn_status"]').val() || []).join();
+                    d['stock_status'] = ($('[name="stock_status"]').val() || []).join();
+                    return d;
+                },
+                dataSrc: 'data'
+            },
+            pageLength: 10,
+            scrollX: true,
+            columns: [
+                { render: _ => window.srNo++, className: 'w-3 text-center' },
+                { render: (a, b, m) => `<span class="main"><b>${m.uid}</b> [S/N: ${m.serial}]</span><br/><small class="text-muted">Zone ${m.zone} / Ward ${m.ward} / Beat No. ${m.beat}</span>` },
+                { render: (a, b, m) => `${ online(m) ? '<span class="badge py-1 px-3 text-white badge-pill badge-success">Online</span>' : '<span class="badge py-1 px-3 badge-pill badge-danger">Offline</span>'}`, className: 'w-5 text-center' },
+                { data: 'spiral_a_status', render: (a, b, m) => stockStatus(m.spiral_a_status, online(m)), className: 'w-5 text-center' },
+                { data: 'burn_status', render: (a, b, m) => burnStatus(m.burn_status, online(m)), className: 'w-5 text-center' },
+                { render: _ => `<button class="btn btn-sm btn-outline-success btn-tt">View</button>`, className: 'w-5 text-center' },
+                { render: (a, b, m) => setRowContent(m), className: "rowData d-none" }
+            ]
+        }).on('xhr.dt', function (a, b, r) {
+            mData = r.data;
+            $('#txt-machines').text(mData.length);
+            $('#txt-machines-on').text(mData.filter(q => moment().diff(moment.utc((q.lastHeartbeatTime || q.lastOnTime).replace('Z', '')), 'minute') < 5).length);
+            $('#txt-collection').html('&#8377;&nbsp;' + (mData.length ? amountText(mData.map(q => q.cashCurrent).reduce(sum)) : 0));
+            $('#txt-inventory').text(mData.length ? mData.map(q => q.qtyCurrent).reduce(sum) : 0);
+        }).on('draw.dt', function () {
+            $('.btn-tt').each(function () {
+                var name = $(this).closest('tr').find('td:eq(1)').find('.main').text().split(' ')[0];
+                var sn = /.*\[S\/N:\s(.*)\]/g.exec($(this).closest('tr').find('td:eq(1)').find('.main').text())[1]
+                var status = $(this).closest('tr').find('td:eq(2)').text();
+                var st = status.toLowerCase() == 'online'
+                var rd = getRowContent(this);
+                $(this).qtip({
+                    content: `
+                        <b style="font-size: 1.25em;">${$(this).closest('tr').find('td:eq(1)').find('.main').text()}<br/><br/></b>
+                        <table class="table">
+                            <tbody>
+                                <tr><th style="color: #444">Status</th><td style="color: #444" class="text-${st ? 'success' : 'danger'}">${status}</td></tr>
+                                <tr><th style="color: #444">Serial</th><td style="color: #444">${sn}</td></tr>
+                                <tr><th style="color: #444">Collection</th><td style="color: #444">&#8377;&nbsp;${rd.cashCurrent}</td></tr>
+                                <tr><th style="color: #444">Items Dispensed</th><td style="color: #444">${rd.qtyCurrent}</td></tr>
+                                <tr><th style="color: #444">On Since</th><td style="color: #444">${moment.utc(rd.lastOnTime.replace('Z', '')).local().format('DD-MMM-YYYY<br/>hh:mm a')}</td></tr>
+                            </tbody>
+                        </table>
+                    `,
+                    style: { classes: 'qtip-bootstrap wide-qtip' },
+                    position: {
+                        at: 'center left',
+                        my: 'center right'
+                    }
+                });
+            })
+        })
+    }
+
+    function stockStatus(i, visible) {
+        if(!visible) return '';
+        switch (i) {
+            case 0: return '<span class="badge  w-7 py-1 px-3 text-white badge-pill badge-danger">Empty</span>'
+            case 1: return '<span class="badge  w-7 py-1 px-3 text-white badge-pill badge-warning">Low</span>'
+            case 3: return '<span class="badge  w-7 py-1 px-3 text-white badge-pill badge-success">Ok</span>'
+            default: return '<span class="badge w-7 py-1 px-3 text-white badge-pill badge-info">?</span>'
+        }
+    }
+
+    function burnStatus(i, visible) {
+        if(!visible) return '';
+        switch (i) {
+            case 1: return '<i class="fa fa-fire fa-2x text-warning" title="Burning On"></i>'
+            case 2: return '<i class="fa fa-exclamation-triangle fa-2x text-danger" title="Burning Error"></i>'
+            default: return ''
+        }
+    }
+
+    function InitData() {
+        LoadData();
+        window.setInterval(_ => { window.srNo = 1; $('#tblMachines').DataTable().ajax.reload(null, false); }, 10000);
+    }
+
+    Array.prototype.distinct = function () {
+        let unique = [...new Set(this)];
+        return unique;
+    }
+
+    var getRandomNumber = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    const sum = (a, b) => a + b;
+
+</script>
+{{/contentFor}}

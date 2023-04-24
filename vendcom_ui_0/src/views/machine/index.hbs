@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title w-100">
+                    Machines
+                    <button class="btn btn-sm btn-success text-white float-right">Add</button>
+                </h4>
+            </div>
+            <div class="card-body">
+                <table class="table w-100" id="tblMachine">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Serial</th>
+                            <th>UID</th>
+                            <th>Zone</th>
+                            <th>Ward</th>
+                            <th>Beat</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#contentFor "styles"}}
+<link rel="stylesheet" href="/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css" />
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+<script src="/assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+    const buttons = c => `
+        <button class="btn btn-sm btn-outline-warning mx-2">Edit</button>
+        <button class="btn btn-sm btn-outline-danger mx-2">Delete</button>
+    `;
+
+    function LoadMachines() {
+        var sr = 1;
+        $('#tblMachine').DataTable().destroy();
+        $('#tblMachine').DataTable({
+            ajax: {
+                url: `${apiUrl}/machine`,
+                dataSrc: 'data'
+            },
+            columns: [
+                { render: _ => sr++ },
+                { data: 'serial' },
+                { data: 'uid' },
+                { data: 'zone' },
+                { data: 'ward' },
+                { data: 'beat' },
+                { render: (a, b, c) => buttons(c), className: 'd-flex' },
+                { render: (a, b, c) => btoa(JSON.stringify(c)), className: 'd-none' },
+            ]
+        });
+    }
+
+    LoadMachines();
+
+</script>
+{{/contentFor}}

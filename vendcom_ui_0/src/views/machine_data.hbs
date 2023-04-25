@@ -240,7 +240,7 @@
                                 <tr><th style="color: #444">Serial</th><td style="color: #444">${sn}</td></tr>
                                 <tr><th style="color: #444">Collection</th><td style="color: #444">&#8377;&nbsp;${rd.cashCurrent}</td></tr>
                                 <tr><th style="color: #444">Items Dispensed</th><td style="color: #444">${rd.qtyCurrent}</td></tr>
-                                <tr><th style="color: #444">On Since</th><td style="color: #444">${moment.utc(rd.lastOnTime.replace('Z', '')).local().format('DD-MMM-YYYY<br/>hh:mm a')}</td></tr>
+                                <tr><th style="color: #444">On Since</th><td style="color: #444">${moment.utc((rd.lastOnTime || rd.lastHeartbeatTime).replace('Z', '')).local().format('DD-MMM-YYYY<br/>hh:mm a')}</td></tr>
                             </tbody>
                         </table>
                     `,

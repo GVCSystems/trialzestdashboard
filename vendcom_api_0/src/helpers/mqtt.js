@@ -25,7 +25,7 @@ module.exports.parse = payload => {
             case "PWR":
                 sequelize.query(`
                     update MachineData set lastOnTime = NOW(), lastHeartbeatTime = NOW(), burn_status = 0, status = 1 where machineId =
-                        (select id from Machines where serial = '${parts[0]}' limit 1)
+                        (select id from Machines where serial = '${parts[0]}' limit 1) 
                     `)
                 break;
             case "HBT":
